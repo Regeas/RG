@@ -14,13 +14,15 @@ public class start extends Actor
      */
     public void act() 
     {
-        if(Greenfoot.mouseClicked(this)) isClicked();
+        if(Greenfoot.mouseClicked(this)) isClicked(); 
     }
     public void isClicked(){
-        getWorld().addObject(new easy(),300,250);
-        getWorld().addObject(new normal(),300,300);
-        getWorld().addObject(new hard(),300,350);
+        getWorld().addObject(new easy(),100,350);
+        getWorld().addObject(new normal(),300,350);
+        getWorld().addObject(new hard(),500,350);
+        Greenfoot.playSound("click.mp3");
         getWorld().removeObject(this);
+                Greenfoot.playSound("CRM.mp3");
         
     }
 }

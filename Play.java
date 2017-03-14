@@ -7,8 +7,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Play extends World
-{   int i;
-    int j = 0;
+{
+    static int time;
+    static int dif;
+    static int score = 300000;
     /**
      * Constructor for objects of class Play.
      * 
@@ -17,12 +19,14 @@ public class Play extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
-        
-
+        addObject(new Timer(),550,50);
+        time=0;
         prepare();
     }
     public void act(){
-       // Timer();
+        if(stickman.check!=true){
+        Timer.time++;
+    }
     }
 
     /**
@@ -31,16 +35,11 @@ public class Play extends World
      */
     private void prepare()
     {
-        goal goal = new goal();
-        addObject(goal,544,290);
-        goal.setLocation(537,284);
-        stickman stickman = new stickman();
-        addObject(stickman,36,268);
-        stickman.setLocation(23,257);
+        addObject(new stickman(),23,267);
+        addObject(new bot(),23, 200);
+        addObject(new re(),480,370);
+        addObject(new main(),540,370);
     }
-   /* public void Timer(){
-        showText("Time : "+ i + (j/60),500,80);
-        j++;
-     } */
 }
+
 

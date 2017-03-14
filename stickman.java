@@ -14,12 +14,14 @@ public class stickman extends Actor
      */
     GreenfootImage m[] = new GreenfootImage[4];
     int n;
-    int gg;
+    int cd;
     boolean g;
+    static boolean check;
     public stickman(){
         g=true;
         n=0;
-        gg=5;
+        check = false;
+        cd=0;
         for(int i = 0 ; i<m.length;i++){
             m[i] = new GreenfootImage("st"+(i)+".png");
         }
@@ -28,23 +30,29 @@ public class stickman extends Actor
     {
         Move();
         anima();
-        gg++;
+        cd++;
+        
+        if(getX() == 533){
+         getWorld().addObject(new board(),300,200);
+         check = true;
+         Greenfoot.playSound("win.wav");
+        }
     }    
     public void Move(){
         if(Greenfoot.isKeyDown("a")&&g){
-            if(gg>=5){
-            setLocation(getX()+2,getY());
-        n++;
-        g=!g;
-        gg=0;
+            if(cd>=0){
+            setLocation(getX()+3,getY());
+            n++;
+            g=!g;
+            cd=0;
         }
         }
         if(Greenfoot.isKeyDown("d")&&!g){
-             if(gg>=5){
-            setLocation(getX()+2,getY());
-            gg=0;
+             if(cd>=0){
+            setLocation(getX()+3,getY());
+            cd=0;
             g=!g;
-        n++;
+            n++;
         }
         }
     }
