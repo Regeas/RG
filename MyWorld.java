@@ -19,5 +19,9 @@ public class MyWorld extends World
         super(600, 400, 1); 
         addObject(new start(),300,250);
     }
+        public void started()
+        {
+        Greenfoot.playSound("CRM.mp3");
+    }
 
 }
