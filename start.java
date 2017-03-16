@@ -22,7 +22,5 @@ public class start extends Actor
         getWorld().addObject(new hard(),500,350);
         Greenfoot.playSound("click.mp3");
         getWorld().removeObject(this);
-                Greenfoot.playSound("CRM.mp3");
-        
     }
 }
