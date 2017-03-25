@@ -39,7 +39,7 @@ public class stickman extends Actor
         }
     }    
     public void Move(){
-        if(Greenfoot.isKeyDown("a")&&g){
+        if(Greenfoot.isKeyDown("a")&& g &&!Greenfoot.isKeyDown("d")){
             if(cd>=0){
             setLocation(getX()+3,getY());
             n++;
@@ -47,7 +47,7 @@ public class stickman extends Actor
             cd=0;
         }
         }
-        if(Greenfoot.isKeyDown("d")&&!g){
+        if(Greenfoot.isKeyDown("d")&& !g && !Greenfoot.isKeyDown("a")){
              if(cd>=0){
             setLocation(getX()+3,getY());
             cd=0;
