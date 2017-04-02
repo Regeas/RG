@@ -16,7 +16,8 @@ public class hard extends Actor
     {
          if(Greenfoot.mouseClicked(this)){ Greenfoot.setWorld(new Play());
              Greenfoot.playSound("click.mp3");
-             Play.dif = 2;
+                if(Play.dif != 3){
+         Play.dif = 3;}
          }
     }    
     

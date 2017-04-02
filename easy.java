@@ -16,7 +16,8 @@ public class easy extends Actor
     {
          if(Greenfoot.mouseClicked(this)){ Greenfoot.setWorld(new Play());
              Greenfoot.playSound("click.mp3");
-         Play.dif = 0;
+            if(Play.dif != 1){
+         Play.dif = 1;}
         }
     }    
 }

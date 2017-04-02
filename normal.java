@@ -14,9 +14,11 @@ public class normal extends Actor
      */
     public void act() 
     {
-         if(Greenfoot.mouseClicked(this)){ Greenfoot.setWorld(new Play());
+         if(Greenfoot.mouseClicked(this)){ 
+             Greenfoot.setWorld(new Play());
              Greenfoot.playSound("click.mp3");
-         Play.dif = 1;
+             if(Play.dif != 2){
+         Play.dif = 2;}
     }    
     }
 }
