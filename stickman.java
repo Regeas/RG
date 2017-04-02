@@ -23,7 +23,7 @@ public class stickman extends Actor
         check = false;
         cd=0;
         for(int i = 0 ; i<m.length;i++){
-            m[i] = new GreenfootImage("st"+(i)+".png");
+            m[i] = new GreenfootImage("sp"+(i)+".png");
         }
     }
     public void act() 
@@ -32,12 +32,14 @@ public class stickman extends Actor
         anima();
         cd++;
         
-        if(getX() == 533){
+        if(getX() == 521 || getX() == 522 || getX() == 523){
+         if(getWorld().getObjects(board.class).isEmpty()){
          getWorld().addObject(new board(),300,200);
          check = true;
          Greenfoot.playSound("win.wav");
         }
-    }    
+       }    
+    }
     public void Move(){
         if(Greenfoot.isKeyDown("a")&& g &&!Greenfoot.isKeyDown("d")){
             if(cd>=0){
@@ -56,6 +58,7 @@ public class stickman extends Actor
         }
         }
     }
+
     public void anima(){
         n=n%m.length;
         setImage(m[n]);
