@@ -10,23 +10,26 @@ public class bot extends stickman
 {   int i ;
     int cd = 1;
     private boolean lose;
+    public static boolean check2;
     /**
      * Act - do whatever the bot wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-       checkDif();
-       i = i+1;
-       cd++;
-       setImage("st"+(i%4)+".png");
-    }    
+       if(Play.dif!=4){
+       checkDif();                 
+       if(lose == false && getX() != 533){
+           i = i+1;    
+       setImage("st"+(i%4)+".png");}
+       cd++; 
+       losing();}
+    }
     
-    
-    public void checkDif(){
-        
+  public void checkDif(){
+   if(Play.dif!=4){
     if(lose == false && getX() != 533){
-        if(Play.dif == 0){
+        if(Play.dif == 1){
          {
           if(cd == 60){
           move(10);
@@ -34,7 +37,7 @@ public class bot extends stickman
           }
         }
     }
-    if(Play.dif == 1){
+    else if(Play.dif == 2){
         {
           if(cd == 30){
           move(10);
@@ -42,15 +45,22 @@ public class bot extends stickman
           }
         }
     }
-    if(Play.dif == 2){
+    else if(Play.dif == 3){
         move(1);     
+    }else if(Play.dif == 4){
     }
+}
+    }}
     
-    }else{
+    
+    public void losing(){
+    
+    {
         if(this.getX() == 533){
             if(getWorld().getObjects(board.class).isEmpty()){
             getWorld().addObject(new board(), 300, 200);
             lose = true;
+            check2 = true;
         }
     }
 }
