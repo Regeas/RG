@@ -22,11 +22,12 @@ public class Play extends World
         addObject(new Timer(),550,50);
         time=0;
         
-        checkDif();
+        
     }
 
    
     public void act(){
+        checkDif();
         if(stickman.check!=true && bot.check2!=true){
         Timer.time++;
     }
