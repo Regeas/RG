@@ -21,47 +21,41 @@ public class Play extends World
         super(600, 400, 1); 
         addObject(new Timer(),550,50);
         time=0;
+        
         checkDif();
     }
 
    
     public void act(){
-        if(stickman.check!=true){
+        if(stickman.check!=true && bot.check2!=true){
         Timer.time++;
     }
     }
     public void checkDif(){
-    if(Play.dif == 0){
-         prepare();
-    }
-      if(Play.dif == 1){
-         prepare();
-    }
-      if(Play.dif == 2){
-         prepare();
-    }
-      if(Play.dif == 3){
+    if(Play.dif == 4){
          prepare2();
+    }
+    else{
+        prepare();
     }
     }
 
-    
-    private void prepare()
-    {
+    public void prepare()
+    {if(getObjects(stickman.class).isEmpty()){
         addObject(new stickman(),23,267);
         addObject(new bot(),23, 200);
         addObject(new re(),480,370);
         addObject(new main(),540,370);
-    }
-    private void prepare2()
+    }}
+    
+    public void prepare2()
     {
+       if(getObjects(stickman.class).isEmpty()){
         addObject(new stickman(),23,267);
         addObject(new stickman2(),23, 200);
         addObject(new re(),480,370);
         addObject(new main(),540,370);
-    }
-  
+    }  
 }
-
-
+}
 
