@@ -21,7 +21,7 @@ public class MyWorld extends World
     }
         public void started()
         {
-        Greenfoot.playSound("CRM.mp3");
+        //Greenfoot.playSound("CRM.mp3");
     }
 
 }

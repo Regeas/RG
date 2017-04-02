@@ -9,12 +9,14 @@ public class board extends Actor
     public static final int WIDTH = 400;
     public static final int HEIGHT = 300;
     int Score = (Play.score/(Timer.time));
-    
+
     public board()
     {
         if(Score <=0){ Score =0;}
          makeImage("       Score    ","        ", (Score));
     }
+    
+    
     private void makeImage(String title, String prefix, int score)
     {
         GreenfootImage image = new GreenfootImage(WIDTH, HEIGHT);
