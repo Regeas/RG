@@ -28,7 +28,7 @@ public class Play extends World
    
     public void act(){
         checkDif();
-        if(stickman.check!=true && bot.check2!=true){
+        if(stickman.check!=true && bot.check2!=true && stickman2.check!=true){
         Timer.time++;
     }
     }
